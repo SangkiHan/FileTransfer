@@ -9,6 +9,7 @@ function openModal(fileId) {
 function closeModal() {
     var modal = document.getElementById("passwordModal");
     modal.style.display = "none";
+    location.reload();
 }
 
 function checkPassword() {
@@ -32,8 +33,6 @@ function checkPassword() {
             // 비밀번호가 올바를 때 모달 창을 닫고 다운로드 폼 제출
             closeModal();
             document.getElementById("passwordForm").submit();
-    
-    		location.reload();
         },
         error: function (xhr) {
             var errorData = JSON.parse(xhr.responseText);
