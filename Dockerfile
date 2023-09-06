@@ -5,7 +5,7 @@ RUN mkdir -p /home/project/FileTransfer
 WORKDIR /home/project/FileTransfer
 
 COPY . /home/project/FileTransfer
-
+ 
 RUN ./gradlew clean
 RUN ./gradlew bootWar
 
