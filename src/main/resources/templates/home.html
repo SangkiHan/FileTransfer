@@ -10,7 +10,7 @@
 <body>
     <h1>파일 업로드</h1>
     
-    <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+    <form th:action="@{/upload}" method="post" enctype="multipart/form-data" onsubmit="uploadFile()">
         <label for="file">파일 선택:</label>
         <input type="file" id="file" name="file" required/><br/>
         
@@ -19,6 +19,10 @@
 
         <input type="submit" value="업로드"/>
     </form>
+    
+    <div id="progress-container">
+	    <div id="progress-bar"></div>
+	</div>
     
     <hr/>
     

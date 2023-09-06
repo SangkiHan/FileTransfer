@@ -91,3 +91,18 @@ ul li:hover {
 ul li a {
     text-decoration: none;
 }
+
+#progress-container {
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 10px;
+}
+
+#progress-bar {
+    height: 30px;
+    width: 0;
+    background-color: #4caf50;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+}
