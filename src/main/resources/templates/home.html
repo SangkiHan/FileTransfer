@@ -32,7 +32,7 @@
         <li th:each="file : ${fileListDtoList}">
             <!-- 파일을 클릭하면 모달 창 열기 -->
 			<a href="#" th:onclick="'openModal(\'' + ${file.id} + '\')'" th:text="${file.originalName}"></a>
-			<span th:text="${#dates.format(file.createDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
+			<span th:text="${#dates.format(file.createdDate, 'yyyy-MM-dd HH:mm:ss')}"></span>
         </li>
     </ul>
     

@@ -44,16 +44,11 @@ public class FileService {
            throw new GlobalException(ErrorCode.FILE_NOT_EXIST);
         }
 
-        // 원래 파일 이름 추출
-        String originalName = files.getOriginalFilename();
-        // 파일 이름으로 쓸 uuid 생성
-        String uuid = UUID.randomUUID().toString();
-        // 확장자 추출(ex : .png)
-        String extension = originalName.substring(originalName.lastIndexOf("."));
-        // uuid와 확장자 결합
-        String fileName = uuid + extension;
-        // 파일을 불러올 때 사용할 파일 경로
-        String filePath = fileDir + fileName;
+        String originalName = files.getOriginalFilename(); 							// 원래 파일 이름 추출
+        String uuid = UUID.randomUUID().toString();									// 파일 이름으로 쓸 uuid 생성
+        String extension = originalName.substring(originalName.lastIndexOf("."));	// 확장자 추출(ex : .png)
+        String fileName = uuid + extension;											// uuid와 확장자 결합
+        String filePath = fileDir + fileName;										// 파일을 불러올 때 사용할 파일 경로
 
         // 파일 엔티티 생성
         FileEntity file = FileEntity.builder()
