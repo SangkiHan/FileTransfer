@@ -20,7 +20,7 @@ public class FileRepositoryImpl implements FileRepositoryCustom{
 	public List<FileListDto> findList() {
 		
 		List<FileListDto> results = queryFactory
-				.select(Projections.bean(FileListDto.class, 
+				.select(Projections.constructor(FileListDto.class,
 						fileEntity.id,
 						fileEntity.originalName,
 						fileEntity.createdDate
