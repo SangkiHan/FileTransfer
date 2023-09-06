@@ -5,12 +5,15 @@ import lombok.Getter;
 @Getter
 public enum ErrorCode {
 	
-	//User
-	ROOM_UNKNOWN("ROO0001", "해당 채팅방이 존재하지않습니다. 관리자에게 문의 해주세요"),
+	//AES
+	ENCRYPT_ERROR("ENC0001", "암호화 중 에러가 발생하였습니다."),
+	DECRYPT_ERROR("DEC0001", "복호화 중 에러가 발생하였습니다."),
 	
-	ALREADY_EXIST("ARE0001", "이미 등록된 사용자입니다."),
+	//File
+	FILE_NOT_EXIST("FIL0001", "파일이 존재하지 않습니다."),
+	FILE_EXCEPTION("FIL0002", "파일 처리 도중 에러가 발생했습니다."),
 	
-	USER_UNKNOWN("USE0001", "존재하지 않는 사용자입니다.");
+	PASSWORD_NOT("PAS0001", "패스워드가 일치하지 않습니다.");
 	
 	private String code;
 	private String message;
