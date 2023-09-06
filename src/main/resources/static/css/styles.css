@@ -72,3 +72,22 @@ input[type="submit"] {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* 파일 목록 스타일 수정 */
+ul {
+    list-style-type: none; /* 왼쪽 기본 점 제거 */
+    padding: 0;
+}
+
+ul li {
+    margin-bottom: 10px;
+    font-family: Arial, sans-serif; /* 원하는 폰트로 변경 */
+    transition: transform 0.3s; /* 커서를 올렸을 때 확대 효과 */
+}
+
+ul li:hover {
+    transform: scale(1.05); /* 커서를 올렸을 때 확대되는 크기 */
+}
+ul li a {
+    text-decoration: none;
+}
