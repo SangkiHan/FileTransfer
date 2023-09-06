@@ -1,19 +1,52 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="utf-8">
+    <meta charset="UTF-8">
+    <title>파일 업로드</title>
+    <!-- CSS 파일 링크 -->
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-	<h2>파일 업로드</h2>
-	
-        <form action="/upload" method="post" enctype="multipart/form-data">
-     	  
-           <h4>단일 파일 업로드</h4>
-           <input type="file" name="file">
-                   	
-           <h4>다중 파일 업로드</h4>
-           <input type="file" multiple="multiple" name="files">
-			
-	   <input type="submit"/>
-	</form>
+    <h1>파일 업로드</h1>
+    
+    <form th:action="@{/upload}" method="post" enctype="multipart/form-data">
+        <label for="file">파일 선택:</label>
+        <input type="file" id="file" name="file" required/><br/>
+        
+        <label for="password">비밀번호:</label>
+        <input type="password" id="password" name="password" required/><br/>
+
+        <input type="submit" value="업로드"/>
+    </form>
+    
+    <hr/>
+    
+    <h2>파일 목록</h2>
+    <ul>
+        <!-- 파일 목록을 나열하고 각 파일에 대한 다운로드 링크를 생성 -->
+        <li th:each="file : ${fileListDtoList}">
+            <!-- 파일을 클릭하면 모달 창 열기 -->
+			<a href="#" th:onclick="'openModal(\'' + ${file.id} + '\')'" th:text="${file.originalName}"></a>
+        </li>
+    </ul>
+    
+    <!-- 비밀번호 입력 모달 -->
+    <div id="passwordModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>비밀번호 입력</h2>
+            <!-- 모달 창에서 파일 다운로드 요청 -->
+            <form method="post" id="passwordForm" onsubmit="return checkPassword()">
+			    <label for="filePassword">비밀번호:</label>
+			    <input type="password" id="filePassword" name="filePassword" required/><br/>
+			    <input type="submit" value="다운로드"/>
+			</form>
+        </div>
+    </div>
+    
+    <!-- JavaScript 파일 링크 -->
+    <script type="text/javascript" th:src="@{/js/scripts.js}"></script>
+    
 </body>
 </html>
