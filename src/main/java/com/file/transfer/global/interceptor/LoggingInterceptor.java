@@ -1,6 +1,7 @@
 package com.file.transfer.global.interceptor;
 
 import org.springframework.stereotype.Component;
+import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.util.ContentCachingRequestWrapper;
 import org.springframework.web.util.ContentCachingResponseWrapper;
@@ -23,10 +24,13 @@ public class LoggingInterceptor implements HandlerInterceptor{
 
 	@Override
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
+		if(!(handler instanceof HandlerMethod) || !(request instanceof ContentCachingRequestWrapper))
+			return;
+		
 		if (request.getClass().getName().contains("SecurityContextHolderAwareRequestWrapper")) {
 			return;
 		}
-		System.out.println(request.toString());
+		
         final ContentCachingRequestWrapper cachingRequest = (ContentCachingRequestWrapper) request;
         final ContentCachingResponseWrapper cachingResponse = (ContentCachingResponseWrapper) response;
         
