@@ -27,16 +27,17 @@ function checkPassword() {
             password: password
         }),
         contentType: "application/json", // JSON 데이터를 보낼 때 필요
+        asyce: false,
         success: function () {
             // 비밀번호가 올바를 때 모달 창을 닫고 다운로드 폼 제출
             closeModal();
             document.getElementById("passwordForm").submit();
+    
+    		location.reload();
         },
         error: function (xhr) {
             var errorData = JSON.parse(xhr.responseText);
 		    alert(errorData.errorMessage);
         }
     });
-    
-    location.reload();
 }
