@@ -7,5 +7,6 @@ public class FileListDto {
 	
 	private Long id;
 	private String originalName;
+	private String createDate;
 
 }

@@ -22,7 +22,8 @@ public class FileRepositoryImpl implements FileRepositoryCustom{
 		List<FileListDto> results = queryFactory
 				.select(Projections.bean(FileListDto.class, 
 						fileEntity.id,
-						fileEntity.originalName
+						fileEntity.originalName,
+						fileEntity.createdDate
 						))
 				.from(fileEntity)
 				.orderBy(fileEntity.createdDate.desc())
