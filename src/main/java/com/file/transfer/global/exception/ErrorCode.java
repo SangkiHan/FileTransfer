@@ -13,6 +13,9 @@ public enum ErrorCode {
 	FILE_NOT_EXIST("FIL0001", "파일이 존재하지 않습니다."),
 	FILE_EXCEPTION("FIL0002", "파일 처리 도중 에러가 발생했습니다."),
 	
+	//Text
+	TEXT_NOT_EXIST("TEX0001", "텍스트가 존재하지 않습니다."),
+	
 	PASSWORD_NOT("PAS0001", "패스워드가 일치하지 않습니다.");
 	
 	private String code;

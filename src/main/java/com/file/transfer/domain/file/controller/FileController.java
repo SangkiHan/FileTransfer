@@ -16,6 +16,7 @@ import com.file.transfer.domain.file.dto.FileCheckDto;
 import com.file.transfer.domain.file.dto.FileDto;
 import com.file.transfer.domain.file.dto.FileListDto;
 import com.file.transfer.domain.file.service.FileService;
+import com.file.transfer.domain.text.service.TextService;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -25,12 +26,13 @@ import lombok.RequiredArgsConstructor;
 public class FileController {
 	
 	private final FileService fileService;
+	private final TextService textService;
 	
 	@GetMapping("/")
 	public String home(Model model) {
         List<FileListDto> fileListDtoList = fileService.findList();
         model.addAttribute("fileListDtoList", fileListDtoList);
-	        
+        model.addAttribute("text", textService.findText());   
 		return "home";
 	}
 	

@@ -1,4 +1,38 @@
-/* styles.css */
+
+/* Flexbox 레이아웃을 사용하여 화면을 두 개의 컬럼으로 나눔 */
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 100vh;
+}
+
+/* 왼쪽 컬럼 스타일 */
+.left-column {
+    flex: 1; /* 왼쪽 컬럼을 1:1 비율로 설정 */
+    padding: 20px;
+}
+
+/* 오른쪽 컬럼 스타일 */
+.right-column {
+    flex: 1; /* 오른쪽 컬럼을 1:1 비율로 설정 */
+    padding: 20px;
+    height: 600px;
+    overflow: hidden; /* 오른쪽 컬럼이 넘칠 때 스크롤 가능하도록 설정 */
+}
+
+/* 오른쪽 컬럼의 텍스트 입력 폼 스타일 */
+.right-column #textForm {
+    width: 100%; /* 폼 너비를 100%로 설정하여 오른쪽 컬럼에 꽉 차도록 함 */
+    height: 500px;
+}
+
+/* 오른쪽 컬럼의 텍스트 박스 스타일 */
+.right-column #textInput {
+    width: 100%; /* 텍스트 박스 너비를 100%로 설정하여 오른쪽 컬럼에 꽉 차도록 함 */
+    box-sizing: border-box; /* 너비와 패딩을 포함하여 계산하도록 함 */
+    height: 100%; /* 텍스트 박스 높이를 100%로 설정하여 내용이 많아질 때 스크롤이 생기도록 함 */
+}
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
