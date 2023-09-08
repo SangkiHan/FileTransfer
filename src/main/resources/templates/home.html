@@ -8,10 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-     <h1>파일 업로드 및 텍스트 입력</h1>
-    
     <div class="flex-container">
-    	
 	        <!-- 왼쪽 컬럼 - 파일 업로드 -->
         <div class="left-column">
             <form th:action="@{/upload}" method="post" enctype="multipart/form-data" onsubmit="uploadFile()">
