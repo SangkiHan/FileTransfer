@@ -19,5 +19,11 @@
 
 ------------
 
+### 💾 ERD
+![fileTransfer](https://github.com/SangkiHan/FileTransfer/assets/68369248/2b2a8459-866b-4c5b-a322-32c73847a1cc)
+
+------------
+
 ### 🌐사이트
 http://218.155.95.66:8200
+![site](https://github.com/SangkiHan/FileTransfer/assets/68369248/af6e4e52-339f-4f23-87fc-dc98824e24b5)
