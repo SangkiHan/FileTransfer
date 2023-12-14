@@ -11,7 +11,7 @@
     <div class="flex-container">
 	        <!-- 왼쪽 컬럼 - 파일 업로드 -->
         <div class="left-column">
-            <form th:action="@{/filetransfer/upload}" method="post" enctype="multipart/form-data" onsubmit="uploadFile()">
+            <form th:action="@{/upload}" method="post" enctype="multipart/form-data" onsubmit="uploadFile()">
 		        <label for="file">파일 선택:</label>
 		        <input type="file" id="file" name="file" required/><br/>
 		        
