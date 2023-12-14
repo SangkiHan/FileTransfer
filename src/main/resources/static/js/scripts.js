@@ -1,7 +1,7 @@
 function openModal(fileId) {
     var modal = document.getElementById("passwordModal");
     var form = modal.querySelector("form");
-    form.action = "/download/" + fileId; // 다운로드 URL 설정
+    form.action = "/filetransfer/download/" + fileId; // 다운로드 URL 설정
     modal.dataset.fileId = fileId;
     modal.style.display = "block";
 }
@@ -21,7 +21,7 @@ function checkPassword() {
     // 비밀번호 확인 Ajax 요청
     $.ajax({
         type: "POST",
-        url: "/checkPassword",
+        url: "/filetransfer/checkPassword",
         data: JSON.stringify({ 
             id: fileId,
             password: password
@@ -45,7 +45,7 @@ function uploadFile() {
     var progressBar = document.getElementById("progress-bar");
 
     var xhr = new XMLHttpRequest();
-    xhr.open("POST", "/upload", true);
+    xhr.open("POST", "/filetransfer/upload", true);
 
     xhr.upload.onprogress = function (event) {
         if (event.lengthComputable) {
