@@ -46,7 +46,8 @@ public class FileService {
 
         String originalName = files.getOriginalFilename(); 							// 원래 파일 이름 추출
         String uuid = UUID.randomUUID().toString();									// 파일 이름으로 쓸 uuid 생성
-        String extension = originalName.substring((originalName.lastIndexOf(".")==-1) ? 0 : originalName.lastIndexOf("."));	// 확장자 추출(ex : .png)
+        String extension = originalName
+			.substring((originalName.lastIndexOf(".")==-1) ? 0 : originalName.lastIndexOf("."));	// 확장자 추출(ex : .png)
         String fileName = uuid + extension;											// uuid와 확장자 결합
         String filePath = fileDir + fileName;										// 파일을 불러올 때 사용할 파일 경로
 
